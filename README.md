@@ -19,6 +19,27 @@ Keep **VoxCeleb2 optional** for a later authentic-training-diversity ablation. T
 
 No synthetic videos are used to fit the authentic-motion GMM. Synthetic labels are used only for evaluation metrics and, if needed, threshold/calibration studies that are explicitly reported as such.
 
+```text
+FFPP/
+├── original_sequences/
+│   └── youtube/
+│       └── c23/
+│           └── videos/
+│
+└── manipulated_sequences/
+    ├── Deepfakes/
+    │   └── c23/
+    │       └── videos/
+    ├── Face2Face/
+    │   └── c23/
+    │       └── videos/
+    ├── FaceSwap/
+    │   └── c23/
+    │       └── videos/
+    └── NeuralTextures/
+        └── c23/
+            └── videos/
+
 ## Stage 1: Extract dlib 68-point trajectories
 
 ```bash
