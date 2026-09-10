@@ -1,4 +1,6 @@
-# Beyonf First Order Motion: Second-Order Kinematic Deepfake Detection —
+# Beyond First Order Motion: Second-Order Kinematic Deepfake Detection —
+
+<img src="assets/Architecture.png" width="600" alt="Kinematic Evidence Triptych">
 
 This strengthens the computational methodology in four ways:
 
