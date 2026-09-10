@@ -1,6 +1,6 @@
-# Second-Order Kinematic Deepfake Detection — Revised Pipeline
+# Beyonf First Order Motion: Second-Order Kinematic Deepfake Detection —
 
-This revision strengthens the computational methodology in four ways:
+This strengthens the computational methodology in four ways:
 
 1. first- and second-order motion are evaluated at the same centered frame;
 2. authentic-motion density estimation is region-specific rather than one GMM pooled across all landmarks;
