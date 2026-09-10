@@ -68,6 +68,9 @@ mkdir -p models
 mkdir -p results
 mkdir -p splits
 ```
+```bash
+wget http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
+```
 
 ## Stage 1: Extract dlib 68-point trajectories
 
