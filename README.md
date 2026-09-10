@@ -58,6 +58,8 @@ FFPP/
     └── NeuralTextures/
         └── c23/
             └── videos/
+```
+
 ```bash
 mkdir -p landmarks/original
 mkdir -p normalized/original
