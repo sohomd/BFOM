@@ -13,7 +13,7 @@ Use three datasets for the main experiment:
 
 - **FaceForensics++ (FF++) c23**: authentic videos for training/validation of the authentic-motion model, plus the four FF++ manipulation methods for the reference test.
 - **Celeb-DF v2**: independent cross-dataset/cross-generator evaluation.
-- **DeepSpeak**: recent talking-head / audiovisual deepfake evaluation. Verify the exact subsets and generation methods used before describing it as diffusion-based.
+- **AV-Deepfake1M**: large-scale audiovisual deepfake evaluation. Verify the exact subsets and generation methods used before analyzing or reporting results.
 
 Keep **VoxCeleb2 optional** for a later authentic-training-diversity ablation. The cleanest primary claim is obtained when the authentic-motion distribution is estimated from FF++ authentic training data only and then evaluated on independent synthetic datasets.
 
