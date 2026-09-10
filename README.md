@@ -33,7 +33,7 @@ pip install \
     "pandas>=2.0" \
     "tqdm>=4.65" \
     "matplotlib>=3.7"
-
+```
 ```bash
 python -c "import dlib, cv2, numpy, scipy, sklearn, pandas, tqdm, matplotlib; print('Environment OK')"
 ```
