@@ -135,7 +135,7 @@ python 04_train_density_model.py \
 
 The revised Stage 4 fits separate GMMs for upper-face/periorbital, nasal, perioral, and contour regions. The number of mixture components is selected by BIC using authentic validation data for each region.
 
-## Stage 5: Score each test dataset and report 95% CIs
+## Stage 5: Score each test dataset and CIs
 
 Run all three representations on exactly the same video set.
 
