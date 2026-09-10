@@ -19,6 +19,25 @@ Keep **VoxCeleb2 optional** for a later authentic-training-diversity ablation. T
 
 No synthetic videos are used to fit the authentic-motion GMM. Synthetic labels are used only for evaluation metrics and, if needed, threshold/calibration studies that are explicitly reported as such.
 
+### Requirements / Dependencies
+
+You can install the required Python packages for this pipeline using `pip`:
+
+```bash
+pip install \
+    "dlib>=19.24" \
+    "opencv-python>=4.8" \
+    "numpy>=1.24" \
+    "scipy>=1.10" \
+    "scikit-learn>=1.3" \
+    "pandas>=2.0" \
+    "tqdm>=4.65" \
+    "matplotlib>=3.7"
+
+```bash
+python -c "import dlib, cv2, numpy, scipy, sklearn, pandas, tqdm, matplotlib; print('Environment OK')"
+```
+
 ```text
 FFPP/
 ├── original_sequences/
