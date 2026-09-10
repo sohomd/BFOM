@@ -58,6 +58,14 @@ FFPP/
     └── NeuralTextures/
         └── c23/
             └── videos/
+```bash
+mkdir -p landmarks/original
+mkdir -p normalized/original
+mkdir -p kinematics/original
+mkdir -p models
+mkdir -p results
+mkdir -p splits
+```
 
 ## Stage 1: Extract dlib 68-point trajectories
 
