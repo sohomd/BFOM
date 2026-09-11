@@ -1,6 +1,6 @@
 # Beyond First Order Motion: Second-Order Kinematic Deepfake Detection —
 
-
+![Framework](Architecture.png)
 
 This strengthens the computational methodology in four ways:
 
