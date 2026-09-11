@@ -293,8 +293,48 @@ train: 720
 val:   140
 test:  140
 ```
+## Authentic-Motion Density Models
 
----
+The framework models facial motion using region-specific Gaussian Mixture
+Models (GMMs) trained **only on authentic FaceForensics++ videos**. Three
+kinematic representations are evaluated:
+
+- **First-order (`v`)** — facial landmark velocity.
+- **Second-order (`a`)** — changes in landmark velocity across consecutive frames.
+- **Combined (`[v, a]`)** — joint first- and second-order representation.
+
+GMM complexity is selected independently for each facial region using the
+lowest Bayesian Information Criterion (BIC) on the held-out authentic
+validation set. Candidate mixture sizes are `{2, 4, 8, 16, 32}`.
+Region-level negative log-likelihood (NLL) scores are clipped at the
+99.9th percentile of the authentic training distribution.
+
+| Representation | Upper-Face / Periorbital | Nasal | Perioral | Contour |
+|---|---:|---:|---:|---:|
+| First-order (`v`) | M=32, clip=17.1995 | M=16, clip=17.1247 | M=32, clip=18.6625 | M=16, clip=18.5237 |
+| Second-order (`a`) | M=32, clip=24.1884 | M=16, clip=24.2555 | M=32, clip=25.1709 | M=16, clip=26.0161 |
+| Combined (`[v,a]`) | M=32, clip=35.6278 | M=32, clip=36.3620 | M=32, clip=38.1580 | M=32, clip=38.7831 |
+
+Here, `M` denotes the number of Gaussian mixture components selected using
+validation BIC, and `clip` denotes the 99.9th-percentile authentic-training
+NLL clipping threshold used during scoring.
+
+### Combined-Representation BIC Selection
+
+For reproducibility, the selected validation BIC values for the combined
+representation were:
+
+| Facial Region | Selected M | Validation BIC | NLL Clip |
+|---|---:|---:|---:|
+| Upper-Face / Periorbital | 32 | 67,998,143.55 | 35.6278 |
+| Nasal | 32 | 28,803,711.41 | 36.3620 |
+| Perioral | 32 | 71,479,393.90 | 38.1580 |
+| Contour | 32 | 61,886,356.05 | 38.7831 |
+
+The resulting combined authentic-motion model is stored as:
+
+```text
+models/gmm_region_combined.pkl
 
 ## Stage 5: Fit Authentic-Motion Density Models
 
