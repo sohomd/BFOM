@@ -189,7 +189,7 @@ python 05_score_and_evaluate.py \
     --out_csv results/combined_celebdf.csv
 ```
 
-Repeat for FF++ and DeepSpeak.
+Repeat for FF++ and AV-Deepfake1M.
 
 ## Stage 6: Paired representation comparison
 
