@@ -113,29 +113,29 @@ python 03_compute_kinematics.py \
 Create identity-disjoint authentic train/validation split files first.
 
 ```bash
-python 04_train_density_model.py \
-    --kinematics_dir data/kinematics/ffpp_authentic \
-    --split_file splits/train_authentic.txt \
-    --val_split_file splits/val_authentic.txt \
-    --out_dir models \
-    --representation first
-
-python 04_train_density_model.py \
-    --kinematics_dir data/kinematics/ffpp_authentic \
+python "04_train_region_gmm.py" \
+    --kinematics_dir kinematics/original \
     --split_file splits/train_authentic.txt \
     --val_split_file splits/val_authentic.txt \
     --out_dir models \
     --representation second
 
-python 04_train_density_model.py \
-    --kinematics_dir data/kinematics/ffpp_authentic \
+python "04_train_region_gmm.py" \
+    --kinematics_dir kinematics/original \
+    --split_file splits/train_authentic.txt \
+    --val_split_file splits/val_authentic.txt \
+    --out_dir models \
+    --representation first
+
+python "04_train_region_gmm.py" \
+    --kinematics_dir kinematics/original \
     --split_file splits/train_authentic.txt \
     --val_split_file splits/val_authentic.txt \
     --out_dir models \
     --representation combined
 ```
 
-The revised Stage 4 fits separate GMMs for upper-face/periorbital, nasal, perioral, and contour regions. The number of mixture components is selected by BIC using authentic validation data for each region.
+The Stage 4 fits separate GMMs for upper-face/periorbital, nasal, perioral, and contour regions. The number of mixture components is selected by BIC using authentic validation data for each region.
 
 ## Stage 5: Score each test dataset and CIs
 
