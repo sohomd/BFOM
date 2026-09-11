@@ -150,7 +150,7 @@ clipped at the 99.9th percentile of the authentic training distribution.
 |---|---:|---:|---:|---:|
 | First-order (`v`) | M=32, clip=17.1995 | M=16, clip=17.1247 | M=32, clip=18.6625 | M=16, clip=18.5237 |
 | Second-order (`a`) | M=32, clip=24.1884 | M=16, clip=24.2555 | M=32, clip=25.1709 | M=16, clip=26.0161 |
-| Combined (`[v,a]`) | TBD | TBD | TBD | TBD |
+| Combined (`[v,a]`) | M=32, clip=35.6293 | M=32, clip=36.3616 | TBD | TBD |
 
 Here, `M` denotes the number of Gaussian mixture components selected by
 validation BIC, and `clip` denotes the authentic-training NLL clipping
