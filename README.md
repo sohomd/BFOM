@@ -93,10 +93,11 @@ For the no-smoothing ablation, use `--smoothing_window 1`.
 ## Stage 3: Compute aligned first- and second-order kinematics
 
 ```bash
-python 03_compute_kinematics.py \
-    --normalized_dir data/normalized/ffpp_authentic \
-    --out_dir data/kinematics/ffpp_authentic \
-    --fps 30
+python "03_compute_kinematics.py" \
+    --normalized_dir normalized/original \
+    --video_dir "FFPP/original_sequences/youtube/c23/videos" \
+    --out_dir kinematics/original \
+    --overwrite
 ```
 
 `--fps` must match the actual source frame rate. The revised script uses a centered first derivative and a centered second derivative, both defined on the same interior frames.
