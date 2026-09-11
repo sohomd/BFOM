@@ -2,13 +2,6 @@
 
 ![Framework](Architecture.png)
 
-This strengthens the computational methodology in four ways:
-
-1. first- and second-order motion are evaluated at the same centered frame;
-2. authentic-motion density estimation is region-specific rather than one GMM pooled across all landmarks;
-3. AUROC/AUPRC are reported with video-level bootstrap 95% confidence intervals;
-4. paired bootstrap comparisons directly test first-order vs second-order vs combined representations.
-
 ## Recommended dataset protocol
 
 Use three datasets for the main experiment:
