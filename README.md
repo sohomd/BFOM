@@ -32,7 +32,7 @@ pip install \
 ```bash
 python -c "import dlib, cv2, numpy, scipy, sklearn, pandas, tqdm, matplotlib; print('Environment OK')"
 ```
-
+## Required Folder Structure for FFPP
 ```text
 FFPP/
 ├── original_sequences/
