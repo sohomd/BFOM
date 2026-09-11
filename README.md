@@ -131,6 +131,31 @@ python "04_train_region_gmm.py" \
 
 The Stage 4 fits separate GMMs for upper-face/periorbital, nasal, perioral, and contour regions. The number of mixture components is selected by BIC using authentic validation data for each region.
 
+## Authentic-Motion Density Models
+
+The framework models facial motion using region-specific Gaussian Mixture
+Models (GMMs) trained **only on authentic FaceForensics++ videos**. Three
+kinematic representations are evaluated:
+
+- **First-order (`v`)** — facial landmark velocity.
+- **Second-order (`a`)** — changes in landmark velocity across consecutive frames.
+- **Combined (`[v, a]`)** — joint first- and second-order representation.
+
+GMM complexity is selected independently for each facial region using the
+lowest BIC on the held-out authentic validation set. Candidate mixture sizes
+are `{2, 4, 8, 16, 32}`. Region-level negative log-likelihood scores are
+clipped at the 99.9th percentile of the authentic training distribution.
+
+| Representation | Upper-Face / Periorbital | Nasal | Perioral | Contour |
+|---|---:|---:|---:|---:|
+| First-order (`v`) | M=32, clip=17.1995 | M=16, clip=17.1247 | M=32, clip=18.6625 | M=16, clip=18.5237 |
+| Second-order (`a`) | M=32, clip=24.1884 | M=16, clip=24.2555 | M=32, clip=25.1709 | M=16, clip=26.0161 |
+| Combined (`[v,a]`) | TBD | TBD | TBD | TBD |
+
+Here, `M` denotes the number of Gaussian mixture components selected by
+validation BIC, and `clip` denotes the authentic-training NLL clipping
+threshold used during scoring.
+
 ## Stage 5: Score each test dataset and CIs
 
 Run all three representations on exactly the same video set.
